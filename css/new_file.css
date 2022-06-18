@@ -1,0 +1,1158 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 头部 */
+header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1920px;
+  height: 88px;
+  background: url(../img/bg_top.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+header .nav {
+  width: 1250px;
+  margin: 0 auto;
+  display: flex;
+}
+
+header .nav .logo {
+  display: block;
+  background: url(../img/logo.png);
+  width: 129px;
+  height: 66px;
+  margin-top: 3px;
+}
+
+header .nav .item {
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .nav .item li {
+  text-align: center;
+  margin-left: 50px;
+}
+
+header .nav .item li a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+header .nav .item li a:hover {
+  color: #e69801;
+}
+
+header .nav .enter_btn {
+  color: #ffffff;
+  background: #e69800;
+  height: 40px;
+  width: 150px;
+  margin-left: 100px;
+  margin-top: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 100%;
+  transition: 0.7s ease 0.1s;
+  transform: translateY(-300%);
+}
+
+.wrapper section {
+  height: 100%;
+  position: relative;
+}
+
+.wrapper section video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.wrapper section:first-of-type img {
+  position: absolute;
+  left: 50%;
+  top: 600px;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.wrapper section:first-of-type .play {
+  display: block;
+  width: 81px;
+  height: 81px;
+  background: url(../img/sprite.png);
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  transform: translate(-50%, 0);
+}
+
+.wrapper section:nth-of-type(2) .context {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper section:nth-of-type(2) .context span {
+  display: block;
+  width: 464px;
+  height: 100px;
+  background: url(../img/sprite.png);
+}
+
+.wrapper section:nth-of-type(2) .context span:first-child {
+  background-position: -246px -217px;
+}
+
+.wrapper section:nth-of-type(2) .context span:nth-child(2) {
+  background-position: -325px -317px;
+  margin-left: 50px;
+}
+
+.wrapper section:nth-of-type(2) .context i {
+  color: white;
+}
+
+.wrapper section:nth-of-type(2) .breathing {
+  color: white;
+  position: absolute;
+  left: 55%;
+  top: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper section:nth-of-type(2) .breathing span:first-child {
+  cursor: pointer;
+  color: #e69800;
+  position: absolute;
+  z-index: 500;
+  width: 20px;
+  height: 20px;
+  background: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(2) .breathing .radio_1,
+.wrapper section:nth-of-type(2) .breathing .radio_2 {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(2) .breathing .radio_1 {
+  animation: breathing 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(2) .breathing .radio_2 {
+  animation: breathing1 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(2) .bkg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg_section1.jpg);
+  position: absolute;
+  background-size: 100% 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+
+.wrapper section:nth-of-type(2) .right_people {
+  width: 450px;
+  height: 732px;
+  position: absolute;
+  right: 226px;
+  top: 150px;
+  text-align: center;
+  z-index: 3;
+  opacity: 0;
+}
+
+.wrapper section:nth-of-type(2) .right_people span {
+  display: block;
+  width: 65px;
+  height: 65px;
+  border: 1px solid #646863;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  background: url(../img/equip.png);
+  position: absolute;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:hover {
+  border-color: #e69800;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(1) {
+  background-position: -10px -10px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(2) {
+  background-position: -10px -92px;
+  top: 170px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(3) {
+  background-position: -10px -175px;
+  top: 250px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(4) {
+  background-position: -10px -257px;
+  top: 330px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(5) {
+  background-position: -3px -331px;
+  right: 0;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(6) {
+  background-position: -3px -399px;
+  right: 0;
+  top: 80px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(7) {
+  background-position: -3px -470px;
+  right: 0;
+  top: 200px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(8) {
+  background-position: -3px -535px;
+  right: 0;
+  top: 280px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(9) {
+  background-position: -3px -607px;
+  right: 0;
+  top: 350px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(10) {
+  background-position: -3px -678px;
+  right: 0;
+  top: 440px;
+}
+
+.wrapper section:nth-of-type(2) .right_people span:nth-child(11) {
+  background-position: -3px -743px;
+  right: 0;
+  top: 550px;
+}
+
+.wrapper section:nth-of-type(3) {
+  position: relative;
+}
+
+.wrapper section:nth-of-type(3) .content {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 340px;
+  transform: translate(-50%);
+  z-index: 200;
+}
+
+.wrapper section:nth-of-type(3) .content span {
+  display: block;
+}
+
+.wrapper section:nth-of-type(3) .content .img1 {
+  width: 387px;
+  height: 110px;
+  background: url(../img/sprite.png);
+  background-position: -793px -215px;
+}
+
+.wrapper section:nth-of-type(3) .content .img2 {
+  width: 466px;
+  height: 98px;
+  background: url(../img/sprite.png);
+  background-position: -851px -332px;
+}
+
+.wrapper section:nth-of-type(3) .content i,
+.wrapper section:nth-of-type(3) .content .img2 {
+  margin-left: 50px;
+}
+
+.wrapper section:nth-of-type(3) .breathing {
+  position: absolute;
+  top: 600px;
+  left: 1350px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.wrapper section:nth-of-type(3) .breathing span {
+  position: absolute;
+}
+
+.wrapper section:nth-of-type(3) .breathing span:first-child {
+  cursor: pointer;
+  color: #e69800;
+  position: absolute;
+  z-index: 500;
+  width: 20px;
+  height: 20px;
+  background: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(3) .breathing .radio1,
+.wrapper section:nth-of-type(3) .breathing .radio2 {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(3) .breathing .radio1 {
+  animation: breathing 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(3) .breathing .radio2 {
+  animation: breathing1 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(3) .bkg {
+  background: url(../img/bg_section2.jpg);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-size: 100% 100%;
+  display: none;
+}
+
+.wrapper section:nth-of-type(3) .right_gun {
+  opacity: 0;
+  width: 605px;
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 550px;
+  align-items: center;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM {
+  flex: 1;
+  width: 580px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM p {
+  width: 580px;
+  height: 95px;
+  background: url(../img/weapon.png);
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AK47 {
+  flex: 1;
+  width: 605px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AK47 p {
+  width: 605px;
+  height: 170px;
+  background: url(../img/weapon.png);
+  background-position: -608px -153px;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM div,
+.wrapper section:nth-of-type(3) .right_gun .AK47 div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: url(../img/equip.png);
+  border: 1px solid #646863;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM div:nth-child(1),
+.wrapper section:nth-of-type(3) .right_gun .AK47 div:nth-child(1) {
+  background-position: 0px -812px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM div:nth-child(2),
+.wrapper section:nth-of-type(3) .right_gun .AK47 div:nth-child(2) {
+  background-position: 0px -872px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM div:nth-child(3),
+.wrapper section:nth-of-type(3) .right_gun .AK47 div:nth-child(3) {
+  background-position: 0px -1112px;
+  left: 10px;
+  bottom: 0;
+}
+
+.wrapper section:nth-of-type(3) .right_gun .AWM div:nth-child(4),
+.wrapper section:nth-of-type(3) .right_gun .AK47 div:nth-child(4) {
+  background-position: 0px -1172px;
+  right: 0;
+  bottom: 0;
+}
+
+.wrapper section:nth-of-type(4) {
+  position: relative;
+}
+
+.wrapper section:nth-of-type(4) .switch {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  width: 700px;
+  justify-content: space-around;
+}
+
+.wrapper section:nth-of-type(4) .switch p {
+  background: url(../img/sprite.png);
+  cursor: pointer;
+  position: absolute;
+}
+
+.wrapper section:nth-of-type(4) .switch .left {
+  width: 110px;
+  height: 79px;
+}
+
+.wrapper section:nth-of-type(4) .switch .left p {
+  width: 110px;
+  height: 79px;
+}
+
+.wrapper section:nth-of-type(4) .switch .left p:nth-child(1) {
+  background-position: 0 -682px;
+  display: none;
+}
+
+.wrapper section:nth-of-type(4) .switch .left p:nth-child(2) {
+  background-position: 0 -768px;
+}
+
+.wrapper section:nth-of-type(4) .switch .right {
+  height: 85px;
+  width: 121px;
+}
+
+.wrapper section:nth-of-type(4) .switch .right p {
+  height: 85px;
+  width: 121px;
+}
+
+.wrapper section:nth-of-type(4) .switch .right p:nth-child(1) {
+  background-position: -113px -684px;
+}
+
+.wrapper section:nth-of-type(4) .switch .right p:nth-child(2) {
+  background-position: -113px -768px;
+  display: none;
+}
+
+.wrapper section:nth-of-type(4) .weather {
+  height: 100%;
+}
+
+.wrapper section:nth-of-type(4) .weather .tw {
+  display: flex;
+  height: 100%;
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div {
+  width: 33%;
+  height: 100%;
+  background-size: 100% 100% !important;
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div:first-child {
+  background: url(../img/img_weather1.jpg);
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div:nth-child(2) {
+  background: url(../img/img_weather2.jpg);
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div:nth-child(3) {
+  background: url(../img/img_weather3.jpg);
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div:hover {
+  width: 50%;
+  transition: 1s;
+}
+
+.wrapper section:nth-of-type(4) .weather .tw div:out-of-range {
+  width: 33%;
+}
+
+.wrapper section:nth-of-type(4) .terrain {
+  height: 100%;
+  display: none;
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw {
+  height: 100%;
+  display: flex;
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div {
+  background-size: 100% 100% !important;
+  height: 100%;
+  width: 20%;
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:nth-child(1) {
+  background: url(../img/img_terrain1.jpg);
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:nth-child(2) {
+  background: url(../img/img_terrain2.jpg);
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:nth-child(3) {
+  background: url(../img/img_terrain3.jpg);
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:nth-child(4) {
+  background: url(../img/img_terrain4.jpg);
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:nth-child(5) {
+  background: url(../img/img_terrain5.jpg);
+}
+
+.wrapper section:nth-of-type(4) .terrain .dw div:hover {
+  width: 35%;
+  transition: 1s;
+}
+
+.wrapper section:nth-of-type(4) .title {
+  width: 731px;
+  height: 81px;
+  background: url(../img/sprite.png);
+  background-position: 0 -421px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.wrapper section:nth-of-type(5) {
+  position: relative;
+}
+
+.wrapper section:nth-of-type(5) .content {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 340px;
+  transform: translate(-50%);
+  text-align: center;
+  width: 800px;
+  z-index: 200;
+}
+
+.wrapper section:nth-of-type(5) .content span {
+  display: block;
+}
+
+.wrapper section:nth-of-type(5) .content .img1 {
+  width: 370px;
+  height: 90px;
+  background: url(../img/sprite.png);
+  background-position: 0px -505px;
+}
+
+.wrapper section:nth-of-type(5) .content .img2 {
+  width: 370px;
+  height: 90px;
+  background: url(../img/sprite.png);
+  background-position: -372px -505px;
+}
+
+.wrapper section:nth-of-type(5) .content .fl {
+  width: 800px;
+  text-align: center;
+}
+
+.wrapper section:nth-of-type(5) .breathing {
+  position: absolute;
+  top: 600px;
+  left: 1100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.wrapper section:nth-of-type(5) .breathing span {
+  position: absolute;
+}
+
+.wrapper section:nth-of-type(5) .breathing span:first-child {
+  cursor: pointer;
+  color: #e69800;
+  position: absolute;
+  z-index: 500;
+  width: 20px;
+  height: 20px;
+  background: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(5) .breathing .radio1,
+.wrapper section:nth-of-type(5) .breathing .radio2 {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.wrapper section:nth-of-type(5) .breathing .radio1 {
+  animation: breathing 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(5) .breathing .radio2 {
+  animation: breathing1 1s linear infinite;
+}
+
+.wrapper section:nth-of-type(5) .bg {
+  background: url(../img/bg_section4.jpg);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  position: relative;
+}
+
+.wrapper section:nth-of-type(5) .bg .vehicle {
+  width: 600px;
+  height: 400px;
+  z-index: 400;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+}
+
+.wrapper section:nth-of-type(5) .bg .vehicle .show {
+  display: block;
+}
+
+.wrapper section:nth-of-type(5) .bg .vehicle img {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  z-index: 400;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul {
+  display: flex;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul .on {
+  color: #e69800;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li {
+  margin-left: 20px;
+  text-align: center;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li span {
+  display: block;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li .sp1 {
+  width: 60px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: 0px -850px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li .sp2 {
+  width: 70px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -74px -850px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li .sp3 {
+  width: 95px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -165px -850px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li .sp4 {
+  width: 95px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -268px -850px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li .sp5 {
+  width: 80px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -370px -850px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li:nth-of-type(1).on span {
+  width: 60px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: 0px -917px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li:nth-of-type(2).on span {
+  width: 70px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -74px -917px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li:nth-of-type(3).on span {
+  width: 95px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -165px -917px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li:nth-of-type(4).on span {
+  width: 95px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -268px -917px;
+}
+
+.wrapper section:nth-of-type(5) .bg .footer ul li:nth-of-type(5).on span {
+  width: 80px;
+  height: 60px;
+  background: url(../img/sprite.png);
+  background-position: -370px -917px;
+}
+
+.six {
+  position: relative;
+}
+
+.six .bg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg_section5.jpg);
+  background-size: 100%;
+}
+
+.six .bg .dv1 {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+
+.six .bg .dv1 .first:hover + .vdo1 {
+  display: block;
+}
+
+.six .bg .dv1 .vdo1 {
+  width: 300px;
+  height: 300px;
+  margin-top: 0;
+  border-radius: 50%;
+  display: none;
+  position: relative;
+}
+
+.six .bg .dv1 .vdo1 .info {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.six .bg .dv2 {
+  position: absolute;
+  bottom: 320px;
+  right: 200px;
+}
+
+.six .bg .dv2 .sec:hover + .vdo2 {
+  display: block;
+}
+
+.six .bg .dv2 .vdo2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: none;
+  position: relative;
+}
+
+.six .bg .dv2 .vdo2 .info {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.six .breathing {
+  margin-bottom: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+  position: relative;
+}
+
+.six .breathing span {
+  position: absolute;
+}
+
+.six .breathing span:first-child {
+  cursor: pointer;
+  color: #e69800;
+  position: absolute;
+  z-index: 500;
+  width: 20px;
+  height: 20px;
+  background: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+
+.six .breathing .radio1,
+.six .breathing .radio2 {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.six .breathing .radio1 {
+  animation: breathing 1s linear infinite;
+}
+
+.six .breathing .radio2 {
+  animation: breathing1 1s linear infinite;
+}
+
+.six .vdo1, .six .vdo2 {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+}
+
+.six .vdo1 {
+  margin-top: 500px;
+}
+
+section .breath {
+  position: absolute;
+  bottom: 100px;
+  left: 700px;
+  position: relative;
+  z-index: 9999;
+}
+
+.breath span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  color: #e69800;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.breath span:nth-of-type(1) {
+  z-index: 99;
+  opacity: 0.5;
+}
+
+.breath span:nth-of-type(2) {
+  animation: breathForm1 1s linear infinite;
+}
+
+.breath span:nth-of-type(3) {
+  animation: breathForm2 1s linear infinite;
+}
+
+@keyframes breathForm1 {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes breathForm2 {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@keyframes breathing {
+  from {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+  }
+  to {
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+  }
+}
+
+@keyframes breathing1 {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  50% {
+    width: 45px;
+    height: 45px;
+    opacity: 0.5;
+  }
+  100% {
+    height: 55px;
+    width: 55px;
+    opacity: 0;
+  }
+}
+
+.move span:first-child {
+  animation: move1 1s ease;
+}
+
+.move span:nth-child(2) {
+  animation: move2 1s ease;
+}
+
+.move i {
+  animation: move1 1s ease;
+}
+
+@keyframes move1 {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -600px;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -500px;
+  }
+}
+
+.moveOne span:first-child {
+  animation: move3 1s ease;
+}
+
+.moveOne span:nth-child(2) {
+  animation: move4 1s ease;
+}
+
+.moveOne i {
+  animation: move3 1s ease;
+}
+
+@keyframes move3 {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -600px;
+  }
+}
+
+@keyframes move4 {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -500px;
+  }
+}
+
+.moveTwo span:first-child {
+  animation: move5 1s ease;
+}
+
+.moveTwo span:nth-child(2) {
+  animation: move6 1s ease;
+}
+
+.moveTwo i {
+  animation: move7 1s ease;
+}
+
+@keyframes move5 {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -200px;
+  }
+}
+
+@keyframes move6 {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -200px;
+  }
+}
+
+@keyframes move5 {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -110px;
+  }
+}
+
+.mouse_Logo {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 50px;
+  width: 24px;
+  height: 77px;
+  background: url(../img/sprite.png);
+  background-position: -86px 0;
+}
